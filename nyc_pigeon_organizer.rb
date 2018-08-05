@@ -2,13 +2,13 @@ require 'pry'
 
 
 def nyc_pigeon_organizer(data)
-  pigeon_list = {}
+  pigeon_list = {} #created new hash for updated info
   
-  data.each do |label, all|
+  data.each do |label, all| #iterating over original hash
     all.each do |type, name|
       name.each do |one|
-        pigeon_list[one] = {:color => [], :gender => [], :lives => []}
-      end
+        pigeon_list[one] = {:color => [], :gender => [], :lives => []} #pigeon_list with singular name is going to have a hash of three key, value (array) pairs. So, pigeon_list(hash) is now: 
+          # pigeon_list = {name: 
     end
   end
   
