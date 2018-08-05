@@ -7,12 +7,13 @@ def nyc_pigeon_organizer(data)
   data.each do |label, all| #iterating over original hash
     all.each do |type, name|
       name.each do |one|
-        pigeon_list[one] = {:color => [], :gender => [], :lives => []} #pigeon_list with singular name is going to have a hash of three key, value (array) pairs. So, pigeon_list(hash) is now: 
+        pigeon_list[one] = {:color => [], :gender => [], :lives => []} 
+        #pigeon_list with singular name is going to have a hash of three key, value (array) pairs. So, pigeon_list(hash) is now: 
           # pigeon_list = {"name" => {:color => [], :gender => [], :lives => []}
     end
   end
   
-  data[:color].each do |color, hash|
+  data[:color].each do |color, hash| #iterating over original hash with color key
     hash.each do |names|
       if data[:color][color].include?(names)
         pigeon_list[names][:color] << color.to_s
