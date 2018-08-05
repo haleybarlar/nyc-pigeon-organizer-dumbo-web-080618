@@ -13,11 +13,15 @@ def nyc_pigeon_organizer(data)
     end
   end
   
-  data[:color].each do |color, hash| #iterating over original hash with color key
+  data[:color].each do |color, hash| #iterating over original hash with color key (first key in blank hash)
     hash.each do |names|
       if data[:color][color].include?(names)
+        #if hash of :color includes the name we're currently using,
         pigeon_list[names][:color] << color.to_s
-        
+        #it'll add the color (as a string)
+        #so new hash is now:
+        # pigeon_list = {"FIRST NAME" => {:color => ["colors of current bird"], :gender => [], :lives => []}, {"NEXT NAME" => {:color => ["next", "colors"], :gender => [], :lives => []}
+        #continues through each name
       end
     end
   end
